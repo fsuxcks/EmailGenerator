@@ -1,4 +1,4 @@
-#EMAIL GENERATOR V2.1 BY fsuxcks
+#EMAIL GENERATOR V2.2 BY fsuxcks
 #PLEASE DONT USE THIS CODE AS YOUR OWN
 #IF YOU WANT TO CHANGE SOMETHING YOUR GOOD TO GO
 
@@ -6,20 +6,21 @@ try:
 	import requests
 	from bs4 import BeautifulSoup
 	from threading import Thread
-	from progress.bar import IncrementalBar
+	from progress.bar import *
+
 except:
-	print("Some depemdencies are not installed. Check README.md for instalations instructions")
+	print("Some dependencies are not installed. Check README.md for instalations instructions")
 	input()
 
 import time
 import os
 
-os.system("title EMAIL GENERATOR V2.1")
+os.system("title EMAIL GENERATOR V2.2")
 os.system("color a")
 
 def logo():
 	print("*"*60)
-	print("               EMAIL GENERATOR V2.1 BY FSUXCKS")
+	print("               EMAIL GENERATOR V2.2 BY FSUXCKS")
 	print("*"*60)
 	time.sleep(0.4)
 
@@ -36,8 +37,8 @@ def getamount():
 	try:
 		amount = int(input("[*] Enter amount of emails: "))
 		if amount > 500 or amount < 1:
-			print("[!] Error code 2. Number of emails must be more than 1 and less than 500.")
-			time.sleep(2.3)
+			print("[!] Error code 2. Number of emails must be more than 1 and less than 400.")
+			time.sleep(2)
 			os.system("cls")
 			logo()
 			return getamount()
@@ -51,9 +52,9 @@ def getamount():
 
 def getthreads(amount):
 	try:
-		threads = int(input("[*] Enter amount of threads [MAX 7]: "))
-		if threads > 7 or threads < 1:
-			print("[!] Error code 8. Number of threads must be more than 1 and less than 7.")
+		threads = int(input("[*] Enter amount of threads [MAX 8]: "))
+		if threads > 8 or threads < 1:
+			print("[!] Error code 8. Number of threads must be more than 1 and less than 8.")
 			time.sleep(2.3)
 			os.system("cls")
 			logo()
@@ -92,7 +93,7 @@ if r.status_code != 200:
 	print("[!] Error code 200. Please check your internet connection")
 	input()
 	exit()
-	
+
 if r.status_code == 404:
 	os.system("cls")
 	os.system("color 4")
@@ -104,7 +105,7 @@ code = r.text
 
 print('[#] Succesfuly loaded generator.')
 print('[#] Threads: ' + str(threads))
-bar = IncrementalBar('Generating emails', max=info)
+bar = IncrementalBar('Generating emails', max=info, suffix="Done: %(percent)d%%  Remaining time: %(eta)ds")
 print("*"*50)
 print("")
 
@@ -123,7 +124,7 @@ def donetxt():
 	for name in email:
 		print(name)
 	print("*"*50)
-	time.sleep(1.7)
+	time.sleep(0.4)
 	print("")
 	print("[?] Use CTRL+ALT+C to copy")
 	print("[?] Press ENTER to quit...")
@@ -140,12 +141,12 @@ def work(code, emails, amount, email, r, bar):
 		try:
 			r = requests.get(link)
 		except:
+			bar.finish()
 			os.system("cls")
 			os.system("color 4")
-			print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads. It will be fixeds soon. Here is your email:")
-			time.sleep(2)
-			donetxt()
-			break
+			print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads.")
+			input()
+			exit()
 		code = r.text
 
 
@@ -163,9 +164,8 @@ for i in range(threads):
 		os.system("cls")
 		os.system("color 4")
 		print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads. It will be fixeds soon. Here is your email:")
-		time.sleep(2)
-		donetxt()
-		break
+		input()
+		exit()
 	soup = BeautifulSoup(code, "lxml")
 	code = r.text
 	email[i-1] = soup.find("div", class_="e7m container to1").find(class_="e7m row").find("b").text
