@@ -17,7 +17,7 @@ os.system("color a")
 
 def logo():
 	print("*"*60)
-	print("               EMAIL GENERATOR V2.0 BY FSUXCKS")
+	print("               EMAIL GENERATOR V2.1 BY FSUXCKS")
 	print("*"*60)
 	time.sleep(0.4)
 
