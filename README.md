@@ -1,4 +1,4 @@
-# Email Generator V2.1
+# Email Generator
 ## Generates up to 500 email accounts per session. Fast and Easy.
 
 ### Dependencies:
@@ -32,5 +32,8 @@ Simply its just sends request to email generating web site, drags email and does
 + Added progress bar
 + Fixed a lot of bugs
 + At the end, script checks if all threads are finished and then shows all emails
+
+### Version 2.1
++ Fixed import bug
 ***
 
