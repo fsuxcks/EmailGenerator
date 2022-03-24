@@ -6,7 +6,7 @@
 + Requets 2.27.1
 + BeautifulSoup 4.10.0
 + Progressbar 2.5
-+ **Works only on Windows. (Will be fixed soon)**
++ **Works only on Windows.**
 ***
 ### Instalation
 > pip3 install requests
@@ -35,5 +35,4 @@ Simply its just sends request to email generating web site, drags email and does
 
 ### Version 2.1
 + Fixed import bug
-***
 
