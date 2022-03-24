@@ -18,18 +18,19 @@
 ### How it works
 Simply its just sends request to email generating web site, drags email and does it up to 500 times with up to 7 threads. Emails are fake, so you cant use it in good services like Instagram or Facebook. And you cant get mails also.
 ***
-###### Work to do:
+### Work to do:
 + Port to Linux (**NOT DONE**)
 + Add Threads (**DONE**)
 + Turn off 100 accounts limit (**DONE**)
 + Change GUI (**NOT DONE**)
-+ Save to file (**NOT DONE**)
++ Save to TXT file (**NOT DONE**)
 
 ## Updates
 ### Version 2.0
 + Added Threads -> 7
-+ Limit of emails 100 -> 500
++ Limit of emails: 100 -> 500
 + Added progress bar
 + Fixed a lot of bugs
-+ At the end program checks if threads are finished and then shows all the email
++ At the end, script checks if all threads are finished and then shows all emails
+***
 
