@@ -1,17 +1,20 @@
 #EMAIL GENERATOR V2.0 BY fsuxcks
 #PLEASE DONT USE THIS CODE AS YOUR OWN
 #IF YOU WANT TO CHANGE SOMETHING YOUR GOOD TO GO
-
-import requests
-from bs4 import BeautifulSoup
-from threading import Thread
-from progress.bar import IncrementalBar
+try:
+        import requests
+        from bs4 import BeautifulSoup
+        from threading import Thread
+        from progress.bar import IncrementalBar
+except:
+        print("Some dependencies are not installed. Check ReadMe.md for Installation instructions")
+        input()
 import time
 import os
 
 
 def logo():
-	os.system("title EMAIL GENERATOR V2.0")
+        os.system("title EMAIL GENERATOR V2.0")
 	os.system("color a")
 	print("*"*60)
 	print("               EMAIL GENERATOR V2.0 BY FSUXCKS")
@@ -33,7 +36,7 @@ logo()
 #########################################
 
 def getamount():
-	try:
+        try:
 		amount = int(input("[*] Enter amount of emails: "))
 		if amount > 500 or amount < 1:
 			print("[!] Error code 2. Number of email must be more than 1 and less than 500.")
