@@ -30,7 +30,7 @@ Simply its just sends request to email generating web site, drags email and does
 
 ## Updates
 ### Version 2.2
-+ Added and improved progress bar
++ Improved progress bar
 + Script testings for server durability
 + Limit of threads: 7 -> 8
 + Speed: 500 emails / 1 minute
