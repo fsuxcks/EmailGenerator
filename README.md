@@ -22,8 +22,8 @@ Simply its just sends request to email generating web site, drags email and does
 + Port to Linux (**NOT DONE**)
 + Add Threads (**DONE**)
 + Turn off 100 accounts limit (**DONE**)
-+ Change GUI
-+ Save to file
++ Change GUI (**NOT DONE**)
++ Save to file (**NOT DONE**)
 
 ## Updates
 ### Version 2.0
