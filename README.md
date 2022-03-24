@@ -1,4 +1,4 @@
-# Email Generator V2.0
+# Email Generator V2.1
 ## Generates up to 500 email accounts per session. Fast and Easy.
 
 ### Dependencies:
