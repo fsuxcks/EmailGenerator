@@ -46,7 +46,7 @@ def getamount():
 			return getamount()
 		return amount
 	except ValueError:
-		print("[!] Eror code 1. Please enter a number.")
+		print("[!] Error code 1. Please enter a number.")
 		time.sleep(1.4)
 		os.system("cls")
 		logo()
