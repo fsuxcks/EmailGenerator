@@ -16,7 +16,7 @@
 > pip3 install bs4
 ***
 ### How it works
-Simply its just sends request to email generating web site, drags email and does it up to 100 times. Emails are fake, so you cant use it in good services like Instagram or Facebook. And you can,t get mails also.
+Simply its just sends request to email generating web site, drags email and does it up to 500 times with up to 7 threads. Emails are fake, so you cant use it in good services like Instagram or Facebook. And you cant get mails also.
 ***
 ###### Work to do:
 + Port to Linux (**NOT DONE**)
