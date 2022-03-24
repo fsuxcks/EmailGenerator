@@ -1,21 +1,22 @@
 #EMAIL GENERATOR V2.1 BY fsuxcks
 #PLEASE DONT USE THIS CODE AS YOUR OWN
 #IF YOU WANT TO CHANGE SOMETHING YOUR GOOD TO GO
-try:
-        import requests
-        from bs4 import BeautifulSoup
-        from threading import Thread
-        from progress.bar import IncrementalBar
-except:
-        print("Some dependencies are not installed. Check ReadMe.md for Installation instructions")
-        input()
-import time
-import os
 
-os.system("title EMAIL GENERATOR V2.1")
-os.system("color a")
+try:
+	import requests
+	from bs4 import BeautifulSoup
+	from threading import Thread
+	from progress.bar import IncrementalBar
+	import time
+	import os
+except:
+	print("Some depemdencies are not installed. Check README.md for instalations instructions")
+	input()
+
 
 def logo():
+	os.system("title EMAIL GENERATOR V2.1")
+	os.system("color a")
 	print("*"*60)
 	print("               EMAIL GENERATOR V2.1 BY FSUXCKS")
 	print("*"*60)
@@ -25,8 +26,8 @@ emails = 0
 email = []
 link = 'https://generator.email/'
 threads = 1
-potok = 0
 
+potok = 0
 
 os.system("cls")
 
@@ -35,10 +36,10 @@ logo()
 #########################################
 
 def getamount():
-        try:
+	try:
 		amount = int(input("[*] Enter amount of emails: "))
 		if amount > 500 or amount < 1:
-			print("[!] Error code 2. Number of email must be more than 1 and less than 500.")
+			print("[!] Error code 2. Number of emails must be more than 1 and less than 500.")
 			time.sleep(2.3)
 			os.system("cls")
 			logo()
@@ -148,7 +149,7 @@ def work(code, emails, amount, email, r, bar):
 		except:
 			os.system("cls")
 			os.system("color 4")
-			print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads. Here is your emails:")
+			print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads. It will be fixeds soon. Here is your email:")
 			time.sleep(2)
 			donetxt()
 			break
