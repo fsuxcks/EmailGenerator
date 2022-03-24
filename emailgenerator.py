@@ -26,7 +26,6 @@ email = []
 link = 'https://generator.email/'
 threads = 1
 potok = 0
-done = False
 
 
 os.system("cls")
@@ -137,21 +136,19 @@ def donetxt():
 	input()
 
 
-def work(code, emails, amount, email, r, bar, done):
+def work(code, emails, amount, email, r, bar):
 	while emails != amount:
 		soup = BeautifulSoup(code, "lxml")
 		email.append(soup.find("div", class_="e7m container to1").find(class_="e7m row").find("b").text)
 		bar.next()
 		emails  = emails + 1
 		r.close
-		if emails == amount:
-			done = True
 		try:
 			r = requests.get(link)
 		except:
 			os.system("cls")
 			os.system("color 4")
-			print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads. It will be fixeds soon. Here is your email:")
+			print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads. Here is your emails:")
 			time.sleep(2)
 			donetxt()
 			break
@@ -159,11 +156,11 @@ def work(code, emails, amount, email, r, bar, done):
 
 
 while potok != threads-1:
-	th = Thread(target=work, args=(code, emails, amount, email, r, bar, done))
+	th = Thread(target=work, args=(code, emails, amount, email, r, bar))
 	th.start()
 	potok = potok + 1
 
-work(code=code, emails=emails, amount=amount, email=email, r=r, bar=bar, done=done)
+work(code=code, emails=emails, amount=amount, email=email, r=r, bar=bar)
 
 for i in range(threads):
 	try:
