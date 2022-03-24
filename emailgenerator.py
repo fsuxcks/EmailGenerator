@@ -7,16 +7,17 @@ try:
 	from bs4 import BeautifulSoup
 	from threading import Thread
 	from progress.bar import IncrementalBar
-	import time
-	import os
 except:
 	print("Some depemdencies are not installed. Check README.md for instalations instructions")
 	input()
 
+import time
+import os
+
+os.system("title EMAIL GENERATOR V2.1")
+os.system("color a")
 
 def logo():
-	os.system("title EMAIL GENERATOR V2.1")
-	os.system("color a")
 	print("*"*60)
 	print("               EMAIL GENERATOR V2.1 BY FSUXCKS")
 	print("*"*60)
