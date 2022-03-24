@@ -17,4 +17,6 @@ Simply its just sends request to email generating web site, drags email and does
 ***
 ###### Work to do:
 + Port to Linux (**NOT DONE**)
++ Add Threds (**NOT DONE**)
++ Turn off 100 accounts limit (**NOT DONE**)
 
