@@ -144,6 +144,7 @@ def work(code, emails, amount, email, r, bar):
 			bar.finish()
 			os.system("cls")
 			os.system("color 4")
+                        bar.finish()
 			print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads.")
 			input()
 			exit()
@@ -163,7 +164,8 @@ for i in range(threads):
 	except:
 		os.system("cls")
 		os.system("color 4")
-		print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads. It will be fixeds soon. Here is your email:")
+                bar.finish()
+		print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads.")
 		input()
 		exit()
 	soup = BeautifulSoup(code, "lxml")
