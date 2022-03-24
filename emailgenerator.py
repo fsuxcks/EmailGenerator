@@ -1,4 +1,4 @@
-#EMAIL GENERATOR V2.0 BY fsuxcks
+#EMAIL GENERATOR V2.1 BY fsuxcks
 #PLEASE DONT USE THIS CODE AS YOUR OWN
 #IF YOU WANT TO CHANGE SOMETHING YOUR GOOD TO GO
 try:
@@ -12,10 +12,10 @@ except:
 import time
 import os
 
+os.system("title EMAIL GENERATOR V2.1")
+os.system("color a")
 
 def logo():
-        os.system("title EMAIL GENERATOR V2.0")
-	os.system("color a")
 	print("*"*60)
 	print("               EMAIL GENERATOR V2.0 BY FSUXCKS")
 	print("*"*60)
