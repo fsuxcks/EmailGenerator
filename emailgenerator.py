@@ -27,14 +27,10 @@ emails = 0
 email = []
 link = 'https://generator.email/'
 threads = 1
-
 potok = 0
 
 os.system("cls")
-
 logo()
-
-#########################################
 
 def getamount():
 	try:
@@ -81,7 +77,6 @@ os.system("cls")
 print("*"*50)
 print("[#] Please wait...")
 
-#########################################
 try:
 	r = requests.get(link)
 except:
@@ -97,6 +92,7 @@ if r.status_code != 200:
 	print("[!] Error code 200. Please check your internet connection")
 	input()
 	exit()
+	
 if r.status_code == 404:
 	os.system("cls")
 	os.system("color 4")
@@ -105,8 +101,6 @@ if r.status_code == 404:
 	exit()
 
 code = r.text
-#########################################
-
 
 print('[#] Succesfuly loaded generator.')
 print('[#] Threads: ' + str(threads))
@@ -122,8 +116,6 @@ if soup.find("div", class_="e7m container to1").find(class_="e7m row").find("b")
 	print("[!] Error code 4. Object not found. Try to install newest version.")
 	input()
 	exit()
-
-#########################################
 
 def donetxt():
 	os.system("cls")
