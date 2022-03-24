@@ -6,7 +6,7 @@ try:
 	import requests
 	from bs4 import BeautifulSoup
 	from threading import Thread
-	from progress.bar import *
+	from progress.bar import IncrementalBar
 
 except:
 	print("Some dependencies are not installed. Check README.md for instalations instructions")
