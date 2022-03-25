@@ -11,11 +11,13 @@ Simply its just sends request to email generating web site, drags email and does
 + **Works only on Windows.**
 ***
 ### Instalation
-> pip3 install requests
+> git clone https://github.com/fsuxcks/EmailGenerator
 > 
-> pip3 install progress
+> cd EmailGenerator
 > 
-> pip3 install bs4
+> pip install -r requirements.txt
+>
+>python emailgenerator.py
 ***
 ### Features
 1. Fast and Easy
