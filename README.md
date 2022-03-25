@@ -35,7 +35,6 @@ Simply its just sends request to email generating web site, drags email and does
 + Parser: lxml -> html.parser
 + Delays change
 + Threads more than amount of emails bug fix
-+ Added requirements.txt
 + Other bugs
 
 ### Version 2.2
