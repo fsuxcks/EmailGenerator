@@ -32,6 +32,7 @@ Simply its just sends request to email generating web site, drags email and does
 ## Updates
 ### Version 2.3
 + Port to Linux
++ Created TXT file with results
 + Parser: lxml -> html.parser
 + Delays change
 + Threads more than amount of emails bug fix
