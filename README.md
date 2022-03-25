@@ -13,7 +13,8 @@ Simply its just sends request to email generating web site, drags email and does
 ### Instalation
 > pip3 install requests
 > 
-> pip3 install progressbar
+> pip3 install progress
+> 
 > 
 > pip3 install bs4
 ***
@@ -24,11 +25,17 @@ Simply its just sends request to email generating web site, drags email and does
 4. Generates 500 emails in 1 minute
 ***
 ### Work to do:
-+ Port to Linux (**NOT DONE**)
 + Change GUI (**NOT DONE**)
 + Save to TXT file (**NOT DONE**)
-
+***
 ## Updates
+### Version 2.3
++ Port to Linux
++ Parser: lxml -> html.parser
++ Delays change
++ Threads more than amount of emails bug fix
++ Other bugs
+
 ### Version 2.2
 + Improved progress bar
 + Script testings for server durability
