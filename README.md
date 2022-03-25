@@ -8,7 +8,7 @@ Simply its just sends request to email generating web site, drags email and does
 + Requets 2.27.1
 + BeautifulSoup 4.10.0
 + Progress 1.6
-+ **Works only on Windows.**
++ Works on Windows/Linux
 ***
 ### Instalation
 > git clone https://github.com/fsuxcks/EmailGenerator
