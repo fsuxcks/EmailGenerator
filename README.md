@@ -25,10 +25,6 @@ Simply its just sends request to email generating web site, drags email and does
 3. Up to 8 Threads
 4. Generates 500 emails in 1 minute
 ***
-### Work to do:
-+ Change GUI (**NOT DONE**)
-+ Save to TXT file (**NOT DONE**)
-***
 ## Updates
 ### Version 2.3
 + Port to Linux
