@@ -1,4 +1,4 @@
-#EMAIL GENERATOR V2.2 BY fsuxcks
+#EMAIL GENERATOR V2.3 BY fsuxcks
 #PLEASE DONT USE THIS CODE AS YOUR OWN
 #IF YOU WANT TO CHANGE SOMETHING YOUR GOOD TO GO
 
@@ -11,17 +11,26 @@ try:
 except:
 	print("Some dependencies are not installed. Check README.md for instalations instructions")
 	input()
+	exit()
 
+import platform
 import time
 import os
 
-os.system("title EMAIL GENERATOR V2.2")
-os.system("color a")
+if platform.system() == "Windows":
+	os.system("title EMAIL GENERATOR V2.3")
+	os.system("color a")
+
+def clearing():
+	if platform.system() == "Windows":
+		os.system("cls")
+	elif platform.system() == "Linux":
+		os.system("clear")
 
 def logo():
-	print("*"*60)
-	print("               EMAIL GENERATOR V2.2 BY FSUXCKS")
-	print("*"*60)
+	print("*"*56)
+	print("               EMAIL GENERATOR V2.3 BY FSUXCKS")
+	print("*"*56)
 	time.sleep(0.4)
 
 emails = 0
@@ -30,7 +39,7 @@ link = 'https://generator.email/'
 threads = 1
 potok = 0
 
-os.system("cls")
+clearing()
 logo()
 
 def getamount():
@@ -38,15 +47,15 @@ def getamount():
 		amount = int(input("[*] Enter amount of emails: "))
 		if amount > 500 or amount < 1:
 			print("[!] Error code 2. Number of emails must be more than 1 and less than 500.")
-			time.sleep(2)
-			os.system("cls")
+			time.sleep(2.6)
+			clearing()
 			logo()
 			return getamount()
 		return amount
 	except ValueError:
 		print("[!] Error code 1. Please enter a number.")
-		time.sleep(1.4)
-		os.system("cls")
+		time.sleep(2.3)
+		clearing()
 		logo()
 		return getamount()
 
@@ -55,8 +64,15 @@ def getthreads(amount):
 		threads = int(input("[*] Enter amount of threads [MAX 8]: "))
 		if threads > 8 or threads < 1:
 			print("[!] Error code 8. Number of threads must be more than 1 and less than 8.")
-			time.sleep(2.3)
-			os.system("cls")
+			time.sleep(2.7)
+			clearing()
+			logo()
+			print("[*] Enter amount of emails: " + str(amount))
+			return getthreads(amount)
+		if threads > amount:
+			print("[!] Threads cant be more than amount of emails.")
+			time.sleep(1.8)
+			clearing()
 			logo()
 			print("[*] Enter amount of emails: " + str(amount))
 			return getthreads(amount)
@@ -64,7 +80,7 @@ def getthreads(amount):
 	except ValueError:
 		print("[!] Eror code 1. Please enter a number.")
 		time.sleep(1.4)
-		os.system("cls")
+		clearing()
 		logo()
 		print("[*] Enter amount of emails: " + str(amount))
 		return getthreads(amount)
@@ -74,28 +90,28 @@ threads = getthreads(amount)
 info = amount
 amount = amount//threads
 
-os.system("cls")
+clearing()
 print("*"*50)
 print("[#] Please wait...")
 
 try:
 	r = requests.get(link)
 except:
-	os.system("cls")
+	clearing()
 	os.system("color 4")
 	print("[!] Error code 6. Please check your internet connection")
 	input()
 	exit()
 	
 if r.status_code != 200:
-	os.system("cls")
+	clearing()
 	os.system("color 4")
 	print("[!] Error code 200. Please check your internet connection")
 	input()
 	exit()
 
 if r.status_code == 404:
-	os.system("cls")
+	clearing()
 	os.system("color 4")
 	print("[!] Error code 404. Site not found or changed. Please download the lastest version from GitHub.")
 	input()
@@ -109,17 +125,17 @@ bar = IncrementalBar('Generating emails', max=info, suffix="Done: %(percent)d%% 
 print("*"*50)
 print("")
 
-soup = BeautifulSoup(code, "lxml")
+soup = BeautifulSoup(code, "html.parser")
 
 if soup.find("div", class_="e7m container to1").find(class_="e7m row").find("b") == None:
-	os.system("cls")
+	clearing()
 	os.system("color 4")
 	print("[!] Error code 4. Object not found. Try to install newest version.")
 	input()
 	exit()
 
 def donetxt():
-	os.system("cls")
+	clearing()
 	print("*"*50)
 	for name in email:
 		print(name)
@@ -133,7 +149,7 @@ def donetxt():
 
 def work(code, emails, amount, email, r, bar):
 	while emails != amount:
-		soup = BeautifulSoup(code, "lxml")
+		soup = BeautifulSoup(code, "html.parser")
 		email.append(soup.find("div", class_="e7m container to1").find(class_="e7m row").find("b").text)
 		bar.next()
 		emails  = emails + 1
@@ -142,7 +158,7 @@ def work(code, emails, amount, email, r, bar):
 			r = requests.get(link)
 		except:
 			bar.finish()
-			os.system("cls")
+			clearing()
 			os.system("color 4")
 			print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads.")
 			input()
@@ -161,13 +177,13 @@ for i in range(threads):
 	try:
 			r = requests.get(link)
 	except:
-		os.system("cls")
+		clearing()
 		os.system("color 4")
 		bar.finish()
 		print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads.")
 		input()
 		exit()
-	soup = BeautifulSoup(code, "lxml")
+	soup = BeautifulSoup(code, "html.parser")
 	code = r.text
 	email[i-1] = soup.find("div", class_="e7m container to1").find(class_="e7m row").find("b").text
 
