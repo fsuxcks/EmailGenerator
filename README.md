@@ -7,7 +7,7 @@ Simply its just sends request to email generating web site, drags email and does
 + Python 3.X
 + Requets 2.27.1
 + BeautifulSoup 4.10.0
-+ Progressbar 1.6
++ Progress 1.6
 + **Works only on Windows.**
 ***
 ### Instalation
