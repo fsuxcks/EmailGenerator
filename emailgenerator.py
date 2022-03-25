@@ -37,7 +37,7 @@ def getamount():
 	try:
 		amount = int(input("[*] Enter amount of emails: "))
 		if amount > 500 or amount < 1:
-			print("[!] Error code 2. Number of emails must be more than 1 and less than 400.")
+			print("[!] Error code 2. Number of emails must be more than 1 and less than 500.")
 			time.sleep(2)
 			os.system("cls")
 			logo()
@@ -172,9 +172,14 @@ for i in range(threads):
 	email[i-1] = soup.find("div", class_="e7m container to1").find(class_="e7m row").find("b").text
 
 time.sleep(0.5)
-if th.is_alive() == False:
+if threads > 1:
+	if th.is_alive() == False:
+		donetxt()
+		bar.finish()
+else:
 	donetxt()
 	bar.finish()
+
 
 
 
