@@ -98,21 +98,18 @@ try:
 	r = requests.get(link)
 except:
 	clearing()
-	os.system("color 4")
 	print("[!] Error code 6. Please check your internet connection")
 	input()
 	exit()
 	
 if r.status_code != 200:
 	clearing()
-	os.system("color 4")
 	print("[!] Error code 200. Please check your internet connection")
 	input()
 	exit()
 
 if r.status_code == 404:
 	clearing()
-	os.system("color 4")
 	print("[!] Error code 404. Site not found or changed. Please download the lastest version from GitHub.")
 	input()
 	exit()
@@ -129,7 +126,6 @@ soup = BeautifulSoup(code, "html.parser")
 
 if soup.find("div", class_="e7m container to1").find(class_="e7m row").find("b") == None:
 	clearing()
-	os.system("color 4")
 	print("[!] Error code 4. Object not found. Try to install newest version.")
 	input()
 	exit()
@@ -159,7 +155,6 @@ def work(code, emails, amount, email, r, bar):
 		except:
 			bar.finish()
 			clearing()
-			os.system("color 4")
 			print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads.")
 			input()
 			exit()
@@ -178,7 +173,6 @@ for i in range(threads):
 			r = requests.get(link)
 	except:
 		clearing()
-		os.system("color 4")
 		bar.finish()
 		print("[!] Error code 9. Server blocked your requests. Try to use less emails and threads.")
 		input()
